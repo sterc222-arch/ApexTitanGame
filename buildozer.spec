@@ -5,7 +5,7 @@ package.domain = org.sterc222.apextitan
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,wav,ttf
 version = 0.1
-requirements = python3,pygame
+requirements = hostpython3==3.10.14, python3==3.10.14, pygame
 orientation = portrait
 fullscreen = 1
 
