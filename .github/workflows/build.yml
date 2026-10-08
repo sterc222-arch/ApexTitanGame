@@ -1,0 +1,27 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout kod
+        uses: actions/checkout@v4
+
+      - name: Postavi Buildozer
+        uses: ArtemSBulgakov/buildozer-action@v1
+        id: buildozer
+        with:
+          workdir: .
+          buildozer_version: master
+
+      - name: Spremi gotov APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: ApexTitan-APK
+          path: bin/*.apk
